@@ -1,0 +1,254 @@
+# typeof 'hello'; -> 'String'
+
+# Javascript uses the keywords 'const' and 'let' to 	declare variables.
+
+# const name = 'Alexa'; // This won't be assigned to another string
+
+# let score = 0; // This value may change during the program
+
+# Reserved Words -> abstract, await, boolean, break, byte, case, catch, char, class
+
+# Data types -> String, symbol, number, boolean, undefined, null
+
+# const Name = {value : 'Alexa'}; // immutable
+
+# name.value = 'Siri' // We can change like this
+
+# name = {value: 'Siri'}; // error
+
+# Using 'const' & 'let' to declare variables means they are block scoped.
+
+# assign a variable to a primitive value
+	const a = 1;
+	let b = a; // a = 1, b = 1
+	b = 2; // a= 1, b = 2
+
+# assign a variable to a non-primitive value
+	const a = {value: 1};
+	let d = c; // c.value = 1, d.value = 1;
+	d.value = 2; //c.value  2, d.value = 2;
+
+# This is because the variables d and c are both referencing same object.
+
+# const abc = 'hacker';
+	abc['length'] or abc.length
+	abc.toLowerCase(), abc.toUpperCase()
+	abc.charAt('2'), abc.indexOf('a'), abc.includes('a'), abc.startsWith('a'), endsWith
+
+# "concat" method to join the strings
+
+# "trim" method will remove the white space
+
+# "repeat" method will repeat a string the stated num of times
+
+# "Template literals" are a special types of strings, they use the 'backtick(`)' character.
+
+# They also allow interpolation of javaScript code. This means Js expression can be inserted inside a string and the result will be displayed
+
+	const name = `Alexa`;
+	const greet = `Hello ${ name }!`; // Hello Alexa!
+
+# const uniqueId = Symbol('Just a symbol');
+
+# It is possible for two variables to point to the same Symbol if the for() method is used.
+
+	const a = Symbol.for('Shared Symbol');
+	const b = Symbol.for('Shared Symbol');
+
+# To check number is integer or not
+	const a = 45;
+	Number.isInteger(a); // true
+
+# 1e6;// 1X10^6, 2E3
+# 3.6E-3; 
+
+# "toExponential()" -> number.toExponential()
+
+# The toFixed() method rounds a number to a fixed number of decimal places
+
+	const PI = 3.1456666;
+	PI.toFixed(3);
+
+# 'NaN' is an error value that is short for "Not a Number". 
+
+# Check if a value is number or not
+	Number.isFinite(45); // true
+	Number.isFinite("ab"); // false
+
+# Convert a string to a number -> Number('23') >> 23
+
+# Another trick simply place a + operator in front of it: 
+	const answer = +'5';
+
+# Convert a number to string -> String(23) >> '23';
+	
+# If a string starts with number parseInt will take the number and ignore any letters come afterwards.
+
+# Only 9 values are always false
+
+	* "" // double quoted empty string literal
+	* '' // single quoted empty string literal
+	* `` // empty template literal
+	* 0
+	* -0 // considered different to 0 by JS
+	* NaN
+	* false
+	* null
+	* undefined
+
+# !(Logical NOT)
+
+# &&(Logical AND)
+
+# ||(Logical OR)
+
+# Soft Equality ( == ), Hard Equality ( === ) -> Quantity and data type
+
+****** Chapter 3 ******
+
+# const myArray = [];
+
+# Removing values from array 
+	delete myArray[3];
+
+# Destructuring an array is the concept of taking values out of an array and represent them as individual values.
+
+	const [x, y] = [1, 2];
+
+# Destructuring is also gives a neat way to swap values.
+	[c, y] = [y, x];
+
+# length -> myArray.length
+	
+# length property is mutable
+	myArray.length = 8;
+
+# Pop, Push, Shift, Unshift
+
+# concat & spread (...) operator
+
+# join() method is used to turn the array into the string.
+
+# Slice and Splice
+
+	myArray.slice(2, 4); // Index 2 to Index 3
+
+# Splice method removes items from an array then inserts new items in their place.
+
+	myArray.splice(2, 1, "hello");
+
+# The first number in the paraentheses tells us the index at which to start the splice. The second number tells us how many items to remove from the array.
+
+# We can use splice() to insert element at particular index
+
+# We can remove value completly using splice()
+	myArray.splice(2, 1); // don't specify any value to fill
+
+# reverse(), sort(), 
+
+# Finding if a value is in array or not
+	myArray.indexOf('existed_value'); // index or -1 will return
+
+# includes() -> Returns boolean value
+
+	myArray.includes("Existed value");
+# you can also add an extra parameter to indicate which index to start the search from
+	$ myArray.includes("Sch Item", 2);
+
+# const list = new Set();
+
+# Add values to the list -> list.add(1);
+
+# Multiple values can be added to the set by repeating the add() method.
+
+	list.add(1).add(2).add(3);
+
+# Set methods -> .size(), .has(element), .delete(), .clear()
+
+# A set can be converted into a list by placing Spread Operator(...)
+		
+	const myArray = [...mySet];
+	const myArray = Array.from(mySet);
+
+# A memory leak occurs when a program retains references to the values that can no longer be accessed in its memory.
+
+***** Maps *****
+
+# Create an empty Map
+	const romanNumerals = new Map();
+
+# Set method is used to to add the elements 
+	romanNumerals.set(1, 'I');
+
+# Map methods
+	.has, .get, .size, .delete, .clear
+
+	const heros = new Map([[1, 2], [3, 4]]); // Map {1=>2, 3=>4}
+
+# Converting Maps into Arrays. 
+	[...myMap] or Array.from(myMap)
+
+# if (condition){
+	// code to run
+  }
+  else{
+
+  }
+
+# Ternary Opereator
+
+ 	condition ? (// code to run if condition is true) : ( // code to run if condition is false);
+
+# const num = 4;
+   console.log(`Num is a ${(num%2 === 0)?'even':'odd'} number`);
+
+# Switch Case Statement
+	switch (number){
+		case 4:
+			console.log('Yu rolled a four');
+			break;
+		default:
+			console.log('You rolled lessthan for');
+			break;
+		}
+
+# Loops will repeat a piece of code over and over again according to certain conditions
+
+# while(condition){
+	// code to run
+}
+
+# do{
+	// do something
+}while(condition)
+
+# FOR loop
+	for (initialization; condition; after){
+		// do something;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
